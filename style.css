@@ -1,0 +1,133 @@
+body{
+	background: linear-gradient(120.84deg, rgb(14, 15, 18) -0.88%, rgb(17, 19, 22) 100%);
+	/*background-color: rgba(31, 33, 40, 0.5);*/
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  
+}
+
+.weeks{
+	display: flex;
+	justify-content: center;
+	border: 1px solid white;
+	width: 298px;
+	height: calc(1em + 18px);
+	border-radius: 30px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.week{	
+	position: relative;
+	top: -1px;
+	text-align: center;
+	width: 150px;
+	padding: 10px;
+	height: 1em;
+	border-radius: 30px;
+	color: white;
+}
+
+.current-week{
+	background-color: white;
+	color: black;
+}
+
+.main{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	border: 1px solid white;
+	border-radius: 30px;
+	margin: 5px;
+	padding: 5px;
+	background-color: rgba(31, 33, 40, 0.5);
+}
+
+.column{
+	display: flex;
+	flex-direction: column;
+}
+
+.cell{
+	background: rgba(31, 33, 40, 0.9);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	border: 1px solid white;
+	border-radius: 30px;
+	margin: 5px;
+	padding: 10px;
+	width: 200px;
+	height: 110px;
+}
+.time .cell{
+	width: 40px;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+.time .weekday{
+	background-color: transparent;
+}
+
+.weekday{
+	font-weight: bold;
+	height: 20px;
+	border: 0px;
+	text-align: center;
+}
+
+.type{
+	width: 50px;
+	border: 1px solid white;
+	border-radius: 8px;
+	text-align: center;
+	color: black;
+}
+
+.prac{
+	background-color: rgb(255, 127, 150);
+}
+
+.lec{
+	background-color: rgb(148, 157, 255);
+}
+
+.current-day{
+	border-radius: 8px;
+	background-color: rgb(54, 54, 55);
+}
+
+.current-lesson{
+	background-color: white;
+}
+
+.current-lesson .lesson, .current-lesson .teacher{
+	color: black;
+}
+
+.current-lesson img{
+	filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(46deg) brightness(100%) contrast(103%);
+}
+
+
+.hide{
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+.lesson, .teacher{
+	color:white;
+}
+
+img{
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(46deg) brightness(100%) contrast(103%);
+}

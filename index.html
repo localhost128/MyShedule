@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+	<title>Shedule</title>
+	<link rel="Stylesheet" type="text/css" href="./style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="weeks"><a id="firstWeek" class="week current-week" onclick="changeWeek('first')">First</a><a id="secondWeek" class="week" onclick="changeWeek('second')">Second</a></div>
+	<div id="first" class="main">
+		<div class="column time">
+			<div class="cell weekday"></div>
+			<div class="cell"><div> 8:30</div></div>
+			<div class="cell"><div>10:25</div></div>
+			<div class="cell"><div>12:20</div></div>
+			<div class="cell"><div>14:15</div></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Monday</div></div>
+			<div class="cell"><a href="https://meet.google.com/tkv-jfru-ykg"><div class="type prac">Prac</div><div class="lesson">Асинхронне програмування</div><div class="teacher"><img src="teacher.svg">Смаковський Денис Сергійович</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/qrh-pgko-nzn"><div class="type prac">Prac</div><div class="lesson">Основи розробки трансляторів</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/qrh-pgko-nzn"><div class="type prac">Prac</div><div class="lesson">Основи розробки трансляторів</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"><a href="#"><div class="type prac">Prac</div><div class="lesson">Основи Інтернету речей</div><div class="teacher"><img src="teacher.svg">Гусєва Ірина Ігорівна</div></a></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Tuesday</div></div>
+			<div class="cell"></div>
+			<div class="cell"><a href="https://meet.google.com/ery-usyn-xvz"><div class="type lec">Lec</div><div class="lesson">Основи Інтернету речей</div><div class="teacher"><img src="teacher.svg">Гусєва Ірина Ігорівна</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/qrh-pgko-nzn"><div class="type lec">Lec</div><div class="lesson">Основи розробки трансляторів</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/qrh-pgko-nzn"><div class="type lec">Lec</div><div class="lesson">Основи розробки трансляторів</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Wednesday</div></div>
+			<div class="cell"></div>
+			<div class="cell"><a href="https://meet.google.com/eon-apra-bqs"><div class="type prac">Prac</div><div class="lesson">Функційне програмування (Haskell)</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"><a href="#" onclick="alert('No Linc')"><div class="type prac">Prac</div><div class="lesson">Іноземна мова професійного спрямування 1</div><div class="teacher"><img src="teacher.svg">Назаренко Ірина Миколаївна</div></a></div>
+			<div class="cell"><a href="#"><div class="type prac">Prac</div><div class="lesson">Компоненти програмної інженерії 4. Якість та тестування програмного забезпечення</div><div class="teacher"><img src="teacher.svg">Варава Іван Андрійович</div></a></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Thursday</div></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Friday</div></div>
+			<div class="cell"><a href="#"><div class="type lec">Lec</div><div class="lesson">Сценарний аналіз бізнес-процесів</div><div class="teacher"><img src="teacher.svg">Кузьміних Валерій ОLecсандрович</div></a></div>
+			<div class="cell"><a href="#"><div class="type lec">Lec</div><div class="lesson">Компоненти програмної інженерії 4. Якість та тестування програмного забезпечення</div><div class="teacher"><img src="teacher.svg">Варава Іван Андрійович</div></a></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Saturday</div></div>
+			<div class="cell"><a href="https://meet.google.com/eon-apra-bqs"><div class="type lec">Lec</div><div class="lesson">Функційне програмування (Haskell)</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/jpm-onsy-zbj"><div class="type lec">Lec</div><div class="lesson">Асинхронне програмування</div><div class="teacher"><img src="teacher.svg">Смаковський Денис Сергійович</div></a></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+	</div>
+	<div id="second" class="main hide">
+		<div class="column time">
+			<div class="cell weekday"></div>
+			<div class="cell"><div> 8:30</div></div>
+			<div class="cell"><div>10:25</div></div>
+			<div class="cell"><div>12:20</div></div>
+			<div class="cell"><div>14:15</div></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Monday</div></div>
+			<div class="cell"></div>
+			<div class="cell"><a href="https://meet.google.com/qrh-pgko-nzn"><div class="type prac">Prac</div><div class="lesson">Основи розробки трансляторів</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Tuesday</div></div>
+			<div class="cell"><a href="https://meet.google.com/ery-usyn-xvz"><div class="type lec">Lec</div><div class="lesson">Основи Інтернету речей</div><div class="teacher"><img src="teacher.svg">Гусєва Ірина Ігорівна</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/qrh-pgko-nzn"><div class="type lec">Lec</div><div class="lesson">Основи розробки трансляторів</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Wednesday</div></div>
+			<div class="cell"></div>
+			<div class="cell"><a href="#"><div class="type prac">Prac</div><div class="lesson">Сценарний аналіз бізнес-процесів</div><div class="teacher"><img src="teacher.svg">Кузьміних Валерій ОLecсандрович</div></a></div>
+			<div class="cell"><a href="#"><div class="type prac">Prac</div><div class="lesson">Іноземна мова професійного спрямування 1</div><div class="teacher"><img src="teacher.svg">Назаренко Ірина Миколаївна</div></a></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Thursday</div></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Friday</div></div>
+			<div class="cell"></div>
+			<div class="cell"><a href="#"><div class="type lec">Lec</div><div class="lesson">Компоненти програмної інженерії 4. Якість та тестування програмного забезпечення</div><div class="teacher"><img src="teacher.svg">Варава Іван Андрійович</div></a></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+		<div class="column">
+			<div class="cell weekday"><div>Saturday</div></div>
+			<div class="cell"><a href="https://meet.google.com/eon-apra-bqs"><div class="type lec">Lec</div><div class="lesson">Функційне програмування (Haskell)</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
+			<div class="cell"><a href="https://meet.google.com/jpm-onsy-zbj"><div class="type lec">Lec</div><div class="lesson">Асинхронне програмування</div><div class="teacher"><img src="teacher.svg">Смаковський Денис Сергійович</div></a></div>
+			<div class="cell"></div>
+			<div class="cell"></div>
+		</div>
+	</div>
+
+
+	<script>
+	function changeWeek(week) {
+		if($("#" + week).hasClass('hide')){
+			$(".main").toggleClass('hide');
+			$(".week").toggleClass('current-week');
+		}
+	}
+	</script>
+	<script>
+	$(document).ready(setCurrent);
+	function setCurrent() {
+		let now = new Date();
+		let col = now.getUTCDay();
+		let row = Math.floor(((now.getHours()-8)*60 + now.getMinutes() - 30)/115)+1;
+		
+		setCurrentWeekday(col)
+		setCurrentLesson(row, col)
+		
+	}
+	function setCurrentWeekday(col){
+		console.log(col)
+		if (col != 0){
+			$('.column').eq(col).addClass('current-day')	
+			$('.column').eq(col+7).addClass('current-day')
+		}
+	}
+	function setCurrentLesson(row, col){
+		if (row < 5){
+			$('.column').eq(col).find('.cell').eq(row).addClass('current-lesson')
+			$('.column').eq(col+7).find('.cell').eq(row).addClass('current-lesson')
+		}
+	}
+	</script>
+</body>
+</html>
