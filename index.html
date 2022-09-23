@@ -37,7 +37,7 @@
 			<div class="cell weekday"><div>Wednesday</div></div>
 			<div class="cell"></div>
 			<div class="cell"><a href="https://meet.google.com/eon-apra-bqs"><div class="type prac">Prac</div><div class="lesson">Функційне програмування (Haskell)</div><div class="teacher"><img src="teacher.svg">Стативка Юрій Іванович</div></a></div>
-			<div class="cell"><a href="#" onclick="alert('No Linc')"><div class="type prac">Prac</div><div class="lesson">Іноземна мова професійного спрямування 1</div><div class="teacher"><img src="teacher.svg">Назаренко Ірина Миколаївна</div></a></div>
+			<div class="cell"><a href="#"><div class="type prac">Prac</div><div class="lesson">Іноземна мова професійного спрямування 1</div><div class="teacher"><img src="teacher.svg">Назаренко Ірина Миколаївна</div></a></div>
 			<div class="cell"><a href="#"><div class="type prac">Prac</div><div class="lesson">Компоненти програмної інженерії 4. Якість та тестування програмного забезпечення</div><div class="teacher"><img src="teacher.svg">Варава Іван Андрійович</div></a></div>
 		</div>
 		<div class="column">
@@ -113,6 +113,7 @@
 			<div class="cell"></div>
 		</div>
 	</div>
+	<div class="footer">Source: <a href="https://github.com/localhost128/MyShedule">https://github.com/localhost128/MyShedule</div>
 
 
 	<script>
@@ -128,23 +129,14 @@
 	function setCurrent() {
 		let now = new Date();
 		let col = now.getUTCDay();
-		let row = Math.floor(((now.getHours()-8)*60 + now.getMinutes() - 30)/115)+1;
+		let row = Math.floor(((now.getHours() - 8) * 60 + now.getMinutes() - 30) / 115) + 1;
 		
-		setCurrentWeekday(col)
-		setCurrentLesson(row, col)
-		
-	}
-	function setCurrentWeekday(col){
-		console.log(col)
-		if (col != 0){
-			$('.column').eq(col).addClass('current-day')	
-			$('.column').eq(col+7).addClass('current-day')
-		}
-	}
-	function setCurrentLesson(row, col){
-		if (row < 5){
-			$('.column').eq(col).find('.cell').eq(row).addClass('current-lesson')
-			$('.column').eq(col+7).find('.cell').eq(row).addClass('current-lesson')
+		if (col > 0 && row >0 && row < 5){
+			$(".main" ).each(function( index ) {
+				column = $(this).find('.column').eq(col)
+				column.addClass('current-day')
+				.find('.cell').eq(row).addClass('current-lesson')
+			});
 		}
 	}
 	</script>
