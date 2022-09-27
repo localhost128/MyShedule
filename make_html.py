@@ -17,7 +17,7 @@ def parse_data(data):
     times = [f'<div class="cell"><div>{x}</div></div>' for x in data['times']]
     times = '\n\t\t\t'.join(times)
     start = data['times'][0].split(':')
-    start = int(start[0]) * 60 + int(start[1]) + 10
+    start = int(start[0]) * 60 + int(start[1]) - 10
     first = [times] + ['\n\t\t\t\t\t{}' * len(data['times']) + '\n\t\t\t\t'] * 12 + ['\'' + data['start_date'] + '\''] + [start]
     second = []
     for lesson in data['lessons']:
