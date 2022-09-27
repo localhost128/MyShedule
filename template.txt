@@ -10,135 +10,98 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
-	<div class="weeks"><a id="firstWeek" class="week current-week" onclick="changeWeek('first')">First</a><a id="secondWeek" class="week" onclick="changeWeek('second')">Second</a></div>
-	<div id="first" class="main">
+	<div class="weeks"><a id="firstWeek" class="week" onclick="changeWeek('first')">First</a><a id="secondWeek" class="week" onclick="changeWeek('second')">Second</a></div>
+	
+	<div class="main">
 		<div class="column time">
 			<div class="cell weekday"></div>
-			<div class="cell"><div> 8:30</div></div>
-			<div class="cell"><div>10:25</div></div>
-			<div class="cell"><div>12:20</div></div>
-			<div class="cell"><div>14:15</div></div>
+			{}
 		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Monday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Tuesday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Wednesday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Thursday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Friday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Saturday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-	</div>
-	<div id="second" class="main hide">
-		<div class="column time">
-			<div class="cell weekday"></div>
-			<div class="cell"><div> 8:30</div></div>
-			<div class="cell"><div>10:25</div></div>
-			<div class="cell"><div>12:20</div></div>
-			<div class="cell"><div>14:15</div></div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Monday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Tuesday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Wednesday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Thursday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Friday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-		</div>
-		<div class="column">
-			<div class="cell weekday"><div>Saturday</div></div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
-			<div class="cell">{}</div>
+		<div class="table-container">
+			<div class="weekdays">
+				<div class="cell weekday">Monday</div>
+				<div class="cell weekday">Tuesday</div>
+				<div class="cell weekday">Wednesday</div>
+				<div class="cell weekday">Thursday</div>
+				<div class="cell weekday">Friday</div>
+				<div class="cell weekday">Saturday</div>
+			</div>
+			<div id="first" class="table">
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+			</div>
+			<div id="second" class="table">
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+				<div class="column">{}</div>
+			</div>
 		</div>
 	</div>
 	<div class="footer">Source: <a href="https://github.com/localhost128/MyShedule">https://github.com/localhost128/MyShedule</div>
 
 
 	<script>
-	function changeWeek(week) {{
-		if($("#" + week).hasClass('hide')){{
-			$(".main").toggleClass('hide');
+	function changeWeek(week) {{{{
+		if($("#" + week).hasClass('hide')){{{{
+			$(".table").toggleClass('hide');
 			$(".week").toggleClass('current-week');
-		}}
-	}}
+		}}}}
+	}}}}
 	</script>
 	<script>
-	$(document).ready(setCurrent);
-	function setCurrent() {{
+	setCurrent();
+	function setCurrent() {{{{
+		let date = {}
+		let start = new Date(date);
 		let now = new Date();
-		let col = now.getUTCDay();
-		let row = Math.floor(((now.getHours() - 8) * 60 + now.getMinutes() - 30) / 115) + 1;
+		let delta = getNumberOfDays(start, now)
 		
-		if (col > 0 && row >0 && row < 5){{
-			$(".main" ).each(function( index ) {{
-				column = $(this).find('.column').eq(col)
-				column.addClass('current-day')
-				.find('.cell').eq(row).addClass('current-lesson')
-			}});
-		}}
-	}}
+		let col = now.getUTCDay()-1;
+		let row = Math.floor(((now.getHours()) * 60 + now.getMinutes() - {}) / 115);
+		
+		if((Math.ceil(delta/7) % 2) == 0){{{{
+			curent_week_1 = "first";
+			curent_week_2 = "second";
+		}}}}else{{{{
+			curent_week_1 = "second";
+			curent_week_2 = "first";
+		}}}}
+		$('#' + curent_week_1).addClass('hide');
+		$('#' + curent_week_2 + "Week").addClass('current-week');
+		
+		
+		if(col >= 0){{{{
+			$('.table').each(function( index ) {{{{
+				column = $(this).find('.column').eq(col);
+				column.addClass('current-day');
+				if (row>=0){{{{
+					column.find('.cell').eq(row).addClass('current-lesson');
+				}}}}
+			}}}});
+		}}}}
+	}}}}
+	function getNumberOfDays(start, end) {{{{ 
+		const date1 = new Date(start); 
+		const date2 = new Date(end); 
+		
+		// One day in milliseconds 
+		const oneDay = 1000 * 60 * 60 * 24; 
+		 
+		// Calculating the time difference between two dates 
+		const diffInTime = date2.getTime() - date1.getTime(); 
+		 
+		// Calculating the no. of days between two dates 
+		const diffInDays = Math.round(diffInTime / oneDay); 
+		 
+		return diffInDays; 
+	 }}}}
 	</script>
 </body>
 </html>

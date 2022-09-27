@@ -39,17 +39,33 @@ a {
 	color: black;
 }
 
+
 .main{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	border: 1px solid white;
 	border-radius: 30px;
-	margin: 5px;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	padding: 5px;
 	background-color: rgba(31, 33, 40, 0.5);
+	width: 1464px;
+}
+.weekdays{
+	display: flex;
+	flex-direction: row;
 }
 
+.table-container{
+	display: flex;
+	flex-direction: column;
+}
+.table{
+	display: flex;
+	flex-direction: row;
+}
 .column{
 	display: flex;
 	flex-direction: column;
@@ -134,6 +150,7 @@ img{
 
 .footer{
 	text-align: center;
+	font-size: 14px;
 }
 .footer a{
 	color: white;
