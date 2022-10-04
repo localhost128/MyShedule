@@ -27,20 +27,44 @@
 				<div class="cell weekday">Saturday</div>
 			</div>
 			<div id="first" class="table">
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
 			</div>
 			<div id="second" class="table">
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
-				<div class="column">{}</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
+				<div class="column">
+					{}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -48,46 +72,49 @@
 
 
 	<script>
-	function changeWeek(week) {{{{
-		if($("#" + week).hasClass('hide')){{{{
+	function changeWeek(week) {{
+		if($("#" + week).hasClass('hide')){{
 			$(".table").toggleClass('hide');
 			$(".week").toggleClass('current-week');
-		}}}}
-	}}}}
+		}}
+	}}
 	</script>
 	<script>
 	setCurrent();
-	function setCurrent() {{{{
-		let date = {}
-		let start = new Date(date);
+	function setCurrent() {{
+		let start = new Date({});
 		let now = new Date();
+		let time = now.getHours() * 60 + now.getMinutes();
+		
 		let delta = getNumberOfDays(start, now)
-		
 		let col = now.getUTCDay()-1;
-		let row = Math.floor(((now.getHours()) * 60 + now.getMinutes() - {}) / 115);
+		let row = getRow(time);
 		
-		if((Math.ceil(delta/7) % 2) == 0){{{{
+		if((Math.ceil(delta/7) % 2) == 0){{
 			curent_week_1 = "first";
 			curent_week_2 = "second";
-		}}}}else{{{{
+		}}else{{
 			curent_week_1 = "second";
 			curent_week_2 = "first";
-		}}}}
+		}}
 		$('#' + curent_week_1).addClass('hide');
 		$('#' + curent_week_2 + "Week").addClass('current-week');
 		
 		
-		if(col >= 0){{{{
-			$('.table').each(function( index ) {{{{
+		if(col >= 0){{
+			$('.table').each(function( index ) {{
 				column = $(this).find('.column').eq(col);
 				column.addClass('current-day');
-				if (row>=0){{{{
-					column.find('.cell').eq(row).addClass('current-lesson');
-				}}}}
-			}}}});
-		}}}}
-	}}}}
-	function getNumberOfDays(start, end) {{{{ 
+				if (row>=0){{
+					cell = column.find('.cell').eq(row);
+					if (cell.contents().length > 0){{
+						cell.addClass('current-lesson');
+					}}
+				}}
+			}});
+		}}
+	}}
+	function getNumberOfDays(start, end) {{ 
 		const date1 = new Date(start); 
 		const date2 = new Date(end); 
 		
@@ -98,10 +125,18 @@
 		const diffInTime = date2.getTime() - date1.getTime(); 
 		 
 		// Calculating the no. of days between two dates 
-		const diffInDays = Math.round(diffInTime / oneDay); 
+		const diffInDays = Math.ceil(diffInTime / oneDay);
 		 
 		return diffInDays; 
-	 }}}}
+	}}
+	function getRow(time) {{ 
+		times = [{}];
+		for (i = 0; i < times.length; i++){{
+			if (times[i] - 10 <= time && time <=  times[i] + 95){{
+				return i;
+			}}
+		}}
+	}}
 	</script>
 </body>
 </html>
